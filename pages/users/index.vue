@@ -1,17 +1,20 @@
 <template>
   <div>
     <h1>Users</h1>
-    <p v-if="!users.length">Nenhum usuário cadastrado</p>
-    <ul v-else>
+    <ul>
       <li v-for="user in users" :key="user.id">
         {{ user.name }} - {{ user.email }}
       </li>
     </ul>
-    <router-link to="/">Voltar</router-link>
+    <NuxtLink to="/">Voltar</NuxtLink>
   </div>
 </template>
 
 <script setup>
+useHead({
+  title: 'My Anime List - Usuários'
+})
+
 const {data: users, error} = useFetch("/api/users/user");
 
 if (error.value)

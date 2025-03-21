@@ -1,6 +1,12 @@
 <template>
   <div>
     <h1>HOME</h1>
-    <router-link to="/users">Usuários</router-link>
+    <NuxtLink to="/users">Usuários</NuxtLink>
   </div>
 </template>
+
+<script setup>
+useHead({
+  title: 'My Anime List - Dashboard'
+})
+</script>
